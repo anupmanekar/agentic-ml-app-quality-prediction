@@ -1,0 +1,19 @@
+agent:
+  model: claude-sonnet-4-6
+  max_retries: 3
+  # Max times the experiment loop can cycle before forcing human escalation
+  max_experiment_iterations: 3
+
+drift:
+  # Columns to monitor for drift
+  monitored_features:
+    - cyclomatic_complexity
+    - loc
+    - coupling
+    - churn_rate
+    - test_failure_rate
+
+human_approval:
+  # Set to false to run fully automated (no interrupt)
+  enabled: true
+  timeout_seconds: 300

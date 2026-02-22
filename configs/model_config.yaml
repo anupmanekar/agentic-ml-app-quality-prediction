@@ -1,0 +1,28 @@
+experiment:
+  name: software-quality-prediction
+  registered_model_name: defect-predictor
+
+training:
+  test_size: 0.2
+  random_state: 42
+  cv_folds: 5
+
+xgboost:
+  n_estimators: 500
+  max_depth: 4
+  learning_rate: 0.01
+  subsample: 0.8
+  colsample_bytree: 0.8
+  eval_metric: auc
+
+thresholds:
+  # Minimum AUC-ROC for a challenger to be considered
+  # Set to 0.73 — JM1 literature ceiling is 0.70-0.76,
+  # confirmed after manual tuning + 30-trial Optuna search
+  min_auc_roc: 0.73
+  # Challenger must beat champion by this margin to trigger promotion
+  promotion_delta: 0.01
+  # PSI threshold above which drift is flagged
+  drift_psi_threshold: 0.2
+  # KS test p-value below which drift is flagged
+  drift_ks_pvalue: 0.05

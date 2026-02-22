@@ -1,0 +1,5 @@
+# MLflow tracking server
+# TODO: Phase 5 implementation
+FROM python:3.11-slim
+RUN pip install uv && uv pip install --system mlflow psycopg2-binary google-cloud-storage
+EXPOSE 5000
