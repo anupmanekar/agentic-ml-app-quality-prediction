@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# uv
+uv.lock
+
+# Environment
+.env
+
+# MLflow local tracking (use remote server in production)
+mlruns/
+mlartifacts/
+
+# Data (raw data should not be committed)
+data/raw/
+data/processed/
+data/drift_samples/
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
